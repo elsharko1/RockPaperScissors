@@ -9,7 +9,7 @@ public class RockPlayer extends Player {
 
     @Override
     public Roshambo generateRoshambo() {
-        return null;
+        return Roshambo.ROCK;
     }
 
 }

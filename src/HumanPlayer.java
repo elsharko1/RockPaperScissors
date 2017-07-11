@@ -35,19 +35,20 @@ public class HumanPlayer extends Player{
         return null;
     }
 
-    public static void runHumanPlayer(){
+    public static String runHumanPlayer(){
         System.out.println("Choose rock paper or scissors: R/P/S");
         input = scan.nextLine();
         //use conditional logic, one of 3 options
-        if(input == "R"){
+        if(input.equalsIgnoreCase("R")){
             input = Roshambo.ROCK.toString();
             //System.out.println("do some task");
-        }else if (input == "S"){
+        }else if (input.equalsIgnoreCase("S")){
             input = Roshambo.SCISSORS.toString();
             //System.out.println("Do something else");
-        }else if (input == "P"){
+        }else if (input.equalsIgnoreCase("P")){
             input = Roshambo.PAPER.toString();
         }
+        return input;
     }
 
     //you can tie it into a validator that converts rock paper scissors to a value 1 2 oor 3 that converts it to a roshambo

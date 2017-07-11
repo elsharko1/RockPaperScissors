@@ -24,18 +24,28 @@ public class RoshamboApp {
         System.out.println("Hello, Please enter your name: ");
         userName = scan.nextLine();
         System.out.println(userName);
-        System.out.println("Who would you like to compete against, Dwayne Johnson or Watson?: ");
-        opponent = scan.nextLine();
-        HumanPlayer.runHumanPlayer();
-        Player.runComputerPlayer();
-        System.out.println(userName+": "+HumanPlayer.input);
-        if("Dwayne Johnson".equalsIgnoreCase(opponent)){
-            System.out.println("Dwayne Johnson: ROCK");
-        }
-        else{System.out.println("Watson: "+computerChoice);}
-        //create an enumeration called Roshambo that stores 3 values, rock paper, scissors,
-        //should include a toString method that can convert the selected value to a string
+        String cont = "y";
 
+        while (cont.equalsIgnoreCase("y")) {
+            System.out.println("Who would you like to compete against, Dwayne Johnson or Watson?: ");
+            opponent = scan.nextLine();
+            String  hpChoice = HumanPlayer.runHumanPlayer();
+            Player.runComputerPlayer();
+            System.out.println(userName + ": " + hpChoice);
+            if ("Dwayne Johnson".equalsIgnoreCase(opponent)) {
+                RockPlayer rp = new RockPlayer();
+                System.out.println("Dwayne Johnson: " + rp.generateRoshambo() );
+            } else {
+                System.out.println("Watson: " + computerChoice);
+            }
+            //create an enumeration called Roshambo that stores 3 values, rock paper, scissors,
+            //should include a toString method that can convert the selected value to a string
+            System.out.println("");
+            System.out.println("Would you like to continue:");
+            System.out.println("Please enter Y or N: ");
+            cont = scan.nextLine();
+        }
+        System.out.println("Goodbye");
 
     }
 
